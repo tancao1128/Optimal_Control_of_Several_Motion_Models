@@ -20,8 +20,8 @@ tau, x0, xobs, xdes, L, r, T = getinput()
 s = np.linalg.norm(np.subtract(xdes,x0))/T
 tau_set = np.arange(1.0,11.0,1)
 outputs = []
-for tau in tau_set:
-    outputs.append(np.insert(all_output(x0, xobs, xdes, L, r, s, T, tau), 0, tau, axis=0))
+for tau1 in tau_set:
+    outputs.append(np.insert(all_output(x0, xobs, xdes, L, r, s, T, tau1), 0, tau1, axis=0))
 df = pd.DataFrame(outputs, columns=['tau', 'a', 'tf', 'tl', 'J'])
 print(df)
 
